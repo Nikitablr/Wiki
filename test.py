@@ -1,8 +1,10 @@
 from selenium import webdriver
-import pytest
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 def test():
-    browser = webdriver.Chrome()
+    chrome_options = Options()
+    browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     browser.get("https://en.wikipedia.org/wiki/Main_Page")
 
 
